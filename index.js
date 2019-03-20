@@ -1,12 +1,8 @@
-const {User} = require('./database/models');
-const user = new User();
-user.name = 'pnlinh';
-user.age = 24;
-user.email = 'pnlinh1207@gmail.com';
-user.save(error => {
-    if (error) {
-        console.log(`Can not save to db`);
-    } else {
-        console.log(`Save to db successfully`);
-    }
-});
+const {insertUser, deleteAllUsers} = require('./database/userController');
+
+insertUser('pnlinh', 24, 'pnlinh1207@gmail.com');
+insertUser('pnlinh2', 25, 'pnlinh1207abc@gmail.com');
+insertUser('pnlinh3', 26, 'pnlinh1207xyz@gmail.com');
+
+// Becareful
+// deleteAllUsers();

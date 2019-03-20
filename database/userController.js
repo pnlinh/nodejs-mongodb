@@ -13,4 +13,13 @@ const insertUser = async (name, age, email) => {
     }
 };
 
-module.exports = {insertUser};
+const deleteAllUsers = async () => {
+    try {
+        await User.deleteMany({});
+        console.log(`Delete all record successfully`);
+    } catch (error) {
+        console.log(`Error: ${error}`);
+    }
+};
+
+module.exports = {insertUser, deleteAllUsers};
